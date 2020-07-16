@@ -11,14 +11,14 @@ import javax.sql.DataSource;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 
-public class JdbcUtil {
+public class DBUtil {
 
 	public static DataSource ds = null;
 	static {
 		try {
 			Properties p = new Properties();
 			//获取字节码目录
-			String path = JdbcUtil.class.getClassLoader().getResource("db.properties").getPath();
+			String path = DBUtil.class.getClassLoader().getResource("db.properties").getPath();
 			System.out.println(path);
 			FileInputStream in = new FileInputStream(path);
 			p.load(in);
